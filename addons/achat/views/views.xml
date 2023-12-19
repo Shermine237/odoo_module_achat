@@ -1,0 +1,125 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition >
+   <record id="purchase_order_form" model="ir.ui.view">
+    <field name="name">purchase.order.form</field>
+    <field name="model">purchase.order</field>
+    <field name="inherit_id" ref="purchase.purchase_order_form"/>
+      <field name="arch" type="xml">
+     <xpath expr="//field[@name='partner_id']" position="before">
+
+                           <field name="type_commande"/>
+
+       
+        </xpath>
+      </field>
+    </record> 
+      <record id="purchase_order_form" model="ir.ui.view">
+    <field name="name">purchase.order.form</field>
+    <field name="model">purchase.order</field>
+    <field name="inherit_id" ref="purchase.purchase_order_form"/>
+      <field name="arch" type="xml">
+     <xpath expr="//field[@name='date_order']" position="before">
+                            
+                           
+                            <field name="aire_sante"/>
+                            <field name="region"/>
+                            <field name="district_sante"/>
+                           
+        </xpath>
+        <xpath expr="//field[@name='currency_id']" position="before">
+         <field name="num_bc"/>
+        </xpath>
+      </field>
+    </record-->
+   <!--record id="purchase_order_form" model="ir.ui.view">
+    <field name="name">purchase.order.form</field>
+    <field name="model">purchase.order</field>
+    <field name="inherit_id" ref="purchase.purchase_order_form"/>
+      <field name="arch" type="xml">
+     <xpath expr="//field[@name='currency_id']" position="before" attrs="{'invisible': [('type_commande', '!=', 'antipaludeen'),('type_commande', '!=', 'ANTIPALUDEEN'), ('type_commande', '!=', 'antirétroviraux et mio'), ('type_commande', '!=', 'ANTIRETROVIRAUX ET MIO')]}">
+          
+                            <field name="name"/>
+                            <field name="aire_sante"/>
+                            <field name="region"/>
+                            <field name="district_sante"/>
+        </xpath>
+      </field>
+    </record>
+      <record id="purchase_order_form" model="ir.ui.view">
+    <field name="name">purchase.order.form</field>
+    <field name="model">purchase.order</field>
+    <field name="inherit_id" ref="purchase.purchase_order_form"/>
+      <field name="arch" type="xml">
+     <xpath expr="//field[@name='currency_id']" position="before" attrs="{'invisible': [('type_commande', '!=', 'antipaludeen'),('type_commande', '!=', 'ANTIPALUDEEN'), ('type_commande', '!=', 'antituberculeux'), ('type_commande', '!=', 'ANTITUBERCULEUX')]}">
+          
+
+                            <field name="aire_sante"/>
+                            <field name="region"/>
+                            <field name="district_sante"/>
+                            <field name="num_bc"/>
+                            <field name="periode_du"/>
+                            <field name="periode_au"/>
+                            <field name="nbre_patient"/>
+
+        </xpath>
+      </field>
+    </record>
+         <record id="purchase_order_form" model="ir.ui.view">
+    <field name="name">purchase.order.form</field>
+    <field name="model">purchase.order</field>
+    <field name="inherit_id" ref="purchase.purchase_order_form"/>
+      <field name="arch" type="xml">
+     <xpath expr="//field[@name='currency_id']" position="before" attrs="{'invisible': [('type_commande', '!=', 'antirétroviraux et mio'),('type_commande', '!=', 'ANTIRETROVIRAUX ET MIO'), ('type_commande', '!=', 'antituberculeux'), ('type_commande', '!=', 'ANTITUBERCULEUX')]}">
+          
+                            <field name="aire_sante"/>
+                            <field name="region"/>
+                            <field name="district_sante"/>
+                            <field name="num_bc"/>
+        </xpath>
+      </field>
+    </record-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="achat.action_window">
+      <field name="name">achat window</field>
+      <field name="res_model">achat.achat</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="achat.action_server">
+      <field name="name">achat server</field>
+      <field name="model_id" ref="model_achat_achat"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="achat" id="achat.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="achat.menu_1" parent="achat.menu_root"/>
+    <menuitem name="Menu 2" id="achat.menu_2" parent="achat.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="achat.menu_1_list" parent="achat.menu_1"
+              action="achat.action_window"/>
+    <menuitem name="Server to list" id="achat" parent="achat.menu_2"
+              action="achat.action_server"/>
+-->
+  </data>
+</odoo>
