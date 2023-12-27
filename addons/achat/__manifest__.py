@@ -20,13 +20,18 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['purchase'],
+    'depends': ['purchase', 'purchase_stock'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
+        "wizards/purchase_order_recommendation_view.xml",
+        "views/purchase_order_views.xml",
         'views/views.xml',
         'views/templates.xml',
+        "views/res_partner.xml",
+        "views/res_config_view.xml",
+        'views/purchase_order_line_views.xml',
         #'reports/report.xml',
         #'reports/commande.xml',
         #'reports/pivot.xml',
